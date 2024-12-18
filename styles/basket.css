@@ -10,4 +10,7 @@
    height: 400px;
    position: sticky;
    top: 55px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
 }
