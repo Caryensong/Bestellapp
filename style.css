@@ -24,7 +24,6 @@ nav img{
 
 .content_wrapper {
   display: flex;
-  gap: 5px;
   flex-direction: row;
   flex-grow: 1;
   margin-top: 55px;

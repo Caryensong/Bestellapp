@@ -1,0 +1,34 @@
+.headline_orderlist{
+   padding: 16px;
+}
+
+h3{
+   margin-top: 0;
+   padding-left: 16px;
+   margin-bottom: o;
+
+}
+
+.order_list{
+   border: 1px solid rgba(85, 40, 3, 0.089);
+   margin-top: 16px;
+   padding-left: 16px;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.price{
+   color: #f86600;
+   font-weight: bold;
+}
+
+.order_list img{
+   width: 35px;
+   height: 35px;
+   padding: 10px;
+}
+.order_list:hover{
+   background-color: #f867004b;
+}
