@@ -98,3 +98,7 @@ a:hover{
    color: #fff;
    background-color: #f86600;
 }
+
+p{
+   margin: 5px;
+}

@@ -15,98 +15,106 @@
     <script src="./script/db.js"></script>
     <script src="./script.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <nav>
       <img src="./assets/Logo/Logo.png" alt="Bestellapp" />
     </nav>
 
     <div class="content_wrapper">
-
       <div class="content">
         <section class="headline">
           <img class="header_img" src="./assets/img/pizza.jpg" alt="pizza" />
-          <img class="logo" src="./assets/img/pizzalogo.png" alt="PizzaLogo">
+          <img class="logo" src="./assets/img/pizzalogo.png" alt="PizzaLogo" />
         </section>
 
         <section class="restaurant_title">
-         <h2>ITALIAN</h2>
-         <div class="reviews">
-            <img src="./assets/icon/star.png">
-          4.9 (200+)
-         </div>
-         </section>
+          <h2>ITALIAN</h2>
+          <div class="reviews">
+            <img src="./assets/icon/star.png" />
+            4.9 (200+)
+          </div>
+        </section>
 
-         <section class="menu_nav">
-            <a href="#">Nudelgerichte</a>
-            <a href="#">Pizza</a>
-            <a href="#">Getränke</a>
-         </section>
+        <section class="menu_nav">
+          <a href="#">Nudelgerichte</a>
+          <a href="#">Pizza</a>
+          <a href="#">Getränke</a>
+        </section>
 
-         <section class="headline_orderlist">
-            <div>
-               <img class="header_img" src="./assets/img/pasta.jpg" alt="Pasta">
+        <section class="headline_orderlist">
+          <div>
+            <img class="header_img" src="./assets/img/pasta.jpg" alt="Pasta" />
             <h3>Nudelgerichte</h3>
-            </div>   
-            
-            <div id="firstOrderList" class="order_list">
-               <img src="./assets/icon/add.png">
-               <div>
-                  <h4>Spagetti Napoli</h4>
-                  <p>Pasta mit Tomatensauce</p>
-                  <p class="price">7.50 Euro</p>
-               </div>
-            </div>
-         </section>
+          </div>
 
-         <section class="headline_orderlist">
+          <div id="firstOrderList" class="order_list">
+            <img src="./assets/icon/add.png" />
             <div>
-               <img class="header_img" src="./assets/img/pizza.jpg" alt="Pasta">
+              <h4>Spagetti Napoli</h4>
+              <p>Pasta mit Tomatensauce</p>
+              <p class="price">7.50 Euro</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="headline_orderlist">
+          <div>
+            <img class="header_img" src="./assets/img/pizza.jpg" alt="Pasta" />
             <h3>Pizza</h3>
-            </div>   
-      
-            <div id="firstOrderList" class="order_list">
-               <img src="./assets/icon/add.png">
-               <div>
-                  <h4>Spagetti Napoli</h4>
-                  <p>Pasta mit Tomatensauce</p>
-                  <p class="price">7.50 Euro</p>
-               </div>
-            </div>
-         </section>
+          </div>
 
-         <section class="headline_orderlist">
+          <div id="firstOrderList" class="order_list">
+            <img src="./assets/icon/add.png" />
             <div>
-               <img class="header_img" src="./assets/img/drinks.jpg" alt="Pasta">
-            <h3>Getränke</h3>
-            </div>   
-      
-            <div id="firstOrderList" class="order_list">
-               <img src="./assets/icon/add.png">
-               <div>
-                  <h4>Spagetti Napoli</h4>
-                  <p>Pasta mit Tomatensauce</p>
-                  <p class="price">7.50 Euro</p>
-               </div>
+              <h4>Spagetti Napoli</h4>
+              <p>Pasta mit Tomatensauce</p>
+              <p class="price">7.50 Euro</p>
             </div>
-         </section>
+          </div>
+        </section>
 
+        <section class="headline_orderlist">
+          <div>
+            <img class="header_img" src="./assets/img/drinks.jpg" alt="Pasta" />
+            <h3>Getränke</h3>
+          </div>
 
+          <div id="firstOrderList" class="order_list">
+            <img src="./assets/icon/add.png" />
+            <div>
+              <h4>Spagetti Napoli</h4>
+              <p>Pasta mit Tomatensauce</p>
+              <p class="price">7.50 Euro</p>
+            </div>
+          </div>
+        </section>
       </div>
-
 
       <section class="basket_wrapper">
         <div class="basket">
           <h3>Warenkorb</h3>
-          <div>
+          <div class="basket_buttons">
             <button>
-              Lieferung
+              <p>Lieferung</p>
               <p>20-45 min</p>
             </button>
             <button>
-              Abholung
+              <p>Abholung</p>
               <p>15 min</p>
             </button>
           </div>
+
+          <div id="basket" >
+            <div class="fill_basket">
+               <img src="./assets/icon/basket_black.png" />
+               <p>Fülle dein Warebkorb</p>
+               <p>
+               Füge einige leckere Gerichte aus der Speisekarte hinzu und
+               bestelle dein Essen.
+               </p>
+            </div>
+          </div>
+
         </div>
       </section>
 

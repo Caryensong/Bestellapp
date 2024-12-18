@@ -9,8 +9,34 @@
    width: 100%;
    height: 400px;
    position: sticky;
-   top: 55px;
+   top: 60px;
    display: flex;
    align-items: center;
    flex-direction: column;
+}
+
+.basket_buttons{
+  margin: 0px 16px 0px 16px;
+  padding: 2px;
+  width: 100%;
+  background-color: rgba(85, 40, 3, 0.089);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.fill_basket{
+  text-align: center;
+  padding-top: 150px;
+}
+button{
+  border: none;
+  cursor: pointer;
+  padding: 1px 40px 1px 40px; 
+  border-radius: 30px;
+}
+
+button:hover{
+  background-color: #fff;
 }
