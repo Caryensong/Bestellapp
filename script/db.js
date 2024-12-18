@@ -15,11 +15,6 @@ let myDishes = [
       "descirption" : "Herzhafitge Lasagne mit Schichten aus Gemüse, Tomatensoße und mit Käse überbacken"
    },
    {
-      "name" : "Spagetti Pesto",
-      "price": 9.50,
-      "descirption" : "Pasta mit Spinat Pesto"
-   },
-   {
       "name" : "Pizza Margherita",
       "price": 7.50,
       "descirption" : " mit Tomatensauce und Mozzarella"
@@ -38,5 +33,18 @@ let myDishes = [
       "name" : "Pizza Italia",
       "price": 9.00,
       "descirption" : "mit Spinat, Zwiebeln und Paprika"
+   },
+   {
+      "name" : "Hausgemachte Limonade",
+      "price": 4.50,
+      "descirption" : "mit Zitrone und Minze"
+   },{
+      "name" : "Himbeer-Limonade",
+      "price": 4.50,
+      "descirption" : "mit Rosmarin, Limette und Himbeeren"
+   },{
+      "name" : "Rote-Bete-Limonade",
+      "price": 4.80,
+      "descirption" : "mit Zitronensaft und Rote Bete,"
    },
    ]
