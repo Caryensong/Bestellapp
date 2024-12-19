@@ -5,17 +5,17 @@
   box-shadow: 0px 3px 20px -2px #8080805d;
 }
 
-.basket{
-   width: 100%;
-   height: 400px;
-   position: sticky;
-   top: 60px;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
+.basket {
+  width: 100%;
+  height: 400px;
+  position: sticky;
+  top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.basket_buttons{
+.basket_buttons {
   margin: 0px 16px 0px 16px;
   padding: 2px;
   width: 100%;
@@ -26,17 +26,68 @@
   justify-content: space-evenly;
 }
 
-.fill_basket{
+.fill_basket {
   text-align: center;
   padding-top: 150px;
 }
-button{
+button.deliver_btn {
   border: none;
   cursor: pointer;
-  padding: 1px 40px 1px 40px; 
+  padding: 1px 40px 1px 40px;
   border-radius: 30px;
 }
 
-button:hover{
+button:hover {
   background-color: #fff;
+}
+
+.delivery {
+  background-color: #fff;
+}
+
+.order_basket {
+  background-color: rgba(85, 40, 3, 0.089);
+  width: 100px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderlist_bar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+.add_removebar {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  align-items: center;
+}
+
+.bar_line{
+width: 100%;
+background-color: rgba(85, 40, 3, 0.089);
+height: 1px;
+}
+.remove_btn{
+  border: none;
+  cursor: pointer;
+  padding: 1px 8px 1px 8px;
+  border-radius: 50%;
+}
+
+.add_btn{
+  border: none;
+  cursor: pointer;
+  padding: 1px 5px 1px 5px;
+  border-radius: 50%;
+}
+.add_btn:hover{
+  background-color:#f86600;
+}
+.remove_btn:hover{
+  background-color:#f86600;
 }
