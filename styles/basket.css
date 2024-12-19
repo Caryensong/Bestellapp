@@ -46,6 +46,10 @@ button:hover {
   background-color: #fff;
 }
 
+#fillOrderListBasket{
+  width: 100%;
+}
+
 .order_basket {
   background-color: rgba(85, 40, 3, 0.089);
   width: 100px;
@@ -72,6 +76,8 @@ button:hover {
 width: 100%;
 background-color: rgba(85, 40, 3, 0.089);
 height: 1px;
+margin-top: 10px;
+margin-bottom: 10px;
 }
 .remove_btn{
   border: none;
@@ -91,4 +97,33 @@ height: 1px;
 }
 .remove_btn:hover{
   background-color:#f86600;
+}
+
+.sum{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2px;
+  color: rgba(0, 0, 0, 0.671);
+}
+.padding-top{
+  padding-top: 30px;
+}
+
+.pay_buttombar{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.pay_buttom{
+  margin-top: 10px;
+  border: none;
+  width: 100%;
+  background-color:#f86600;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: bolder;
+}
+.pay_buttom:hover{
+  background-color:#e66f38;
 }
