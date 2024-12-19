@@ -26,10 +26,11 @@
   justify-content: space-evenly;
 }
 
-.fill_basket {
+.start_basket {
   text-align: center;
   padding-top: 150px;
 }
+
 button.deliver_btn {
   border: none;
   cursor: pointer;
