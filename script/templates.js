@@ -6,9 +6,9 @@ function getHeadlineTemplate(i) {
       </div>`;
 }
 
-function getDishTemplate(dish) {
+function getDishTemplate(dish, globalIndex) {
    return `
-       <div onclick="addDishesToBasket(${dish})" class="order_list">
+      <div onclick="addDishesToBasket(${globalIndex})" class="order_list">
          <img class="add_icon" src="./assets/icon/add.png" />
          <div class="dish_info">
             <h4>${dish.name}</h4>
@@ -18,25 +18,25 @@ function getDishTemplate(dish) {
       </div>`;
 }
 
-function getOrderlistToBasekt(dish){
-   retrun `
-          <div class="orderlist_bar">
-              <span>${dish.name}</span>
-              <span>${dish.price.toFixed(2).replace(".",",")} Euro</span>
-            </div>
+function getOrderlistToBasekt(index){
+   return `
+         <div class="orderlist_bar">
+              <span>${myDishes[index].name}</span>
+              <span>${myDishes[index].price.toFixed(2).replace(".",",")} Euro</span>
+         </div>
 
          <div class="add_removebar">
-              <span> Anmerkungen hinzufügen</span>
-              <div class="order_basket">
-                <button class="remove_btn">
+            <span> Anmerkungen hinzufügen</span>
+            <div class="order_basket">
+               <button class="remove_btn">
                   <p>-</p>
-                </button>
-                <span>2</span>
-                <button class="add_btn">
+               </button>
+               <span>2</span>
+               <button class="add_btn">
                   <p>+</p>
-                </button>
-               </div> 
-            </div>
-            <div class="bar_line"></div>
+               </button>
+            </div> 
+         </div>
+         <div class="bar_line"></div>
    `
 }
