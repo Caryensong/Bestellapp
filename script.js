@@ -13,11 +13,10 @@ function render() {
 
       for(let j =0; j < dishesForCategory.length; j++) {
       let dish = dishesForCategory[j];
+
       let globalIndex = findDishIndex(dish.name);
 
-         contentOrderRef.innerHTML += getDishTemplate(dish, globalIndex);
-   //  for (dish of dishesForCategory) {
-   //    contentOrderRef.innerHTML += getDishTemplate(dish );
+      contentOrderRef.innerHTML += getDishTemplate(dish, globalIndex);
     }
   }
 }
@@ -28,7 +27,6 @@ function getDishesForCategory(category) {
     Pizza: ["Pizza Margherita","Pizza Funghi","Pizza Spinaci","Pizza Italia",],
     Getränke: ["Hausgemachte Limonade","Himbeer-Limonade","Rote-Bete-Limonade",],
   };
-
   const dishesForCategory = categoryMapping[category];
   return myDishes.filter((dish) => dishesForCategory.includes(dish.name));
 }
@@ -39,12 +37,11 @@ function findDishIndex(dishName) {
        return i;
      }
    }
-   return -1; // -1 zurückgeben, wenn kein Gericht gefunden wurde
  }
 
  
 function addDishesToBasket(index) {
-   let dish = myDishes[index];
   let basketRef = document.getElementById("fillOrderListBasket");
+  basketRef.innerHTML = " ";
   basketRef.innerHTML += getOrderlistToBasekt(index);
 }

@@ -37,6 +37,25 @@ function getOrderlistToBasekt(index){
                </button>
             </div> 
          </div>
+
+         <div class="sum padding-top">
+            <span>Zwischensumme</span>
+             <span>20 Euro</span>
+          </div>
+          <div class="sum">
+            <span>Lieferkosten</span>
+            <span>4,50 Euro</span>
+         </div>
          <div class="bar_line"></div>
+         <div class="sum">
+            <span>Gesamt</span>
+            <span>20 Euro</span>
+         </div>
+
+          <div class="pay_buttombar">
+            <button class="pay_buttom">
+              <p>Bezahlen (29,80Euro)</p>
+            </button>
+          </div>
    `
 }
