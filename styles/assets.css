@@ -32,4 +32,5 @@ h3{
 }
 .order_list:hover{
    background-color: #f867004b;
+   cursor: pointer;
 }
