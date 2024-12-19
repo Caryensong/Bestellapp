@@ -24,5 +24,9 @@ function getDishesForCategory(category){
 
    const dishesForCategory = categoryMapping[category];
    return myDishes.filter(dish => dishesForCategory.includes(dish.name));
+}
 
+function addDishesToBasket(dish){
+   let basketRef = document.getElementById('fillOrderListBasket');
+   basketRef.innerHTML += getOrderlistToBasekt(dish);
 }
