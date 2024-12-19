@@ -47,4 +47,19 @@ let myDishes = [
       "price": 4.80,
       "descirption" : "mit Zitronensaft und Rote Bete,"
    },
-   ]
+   ];
+
+let myDishesHeadline =[
+   {
+      "categoryName": "Nudelgerichte",
+      "img": "pasta.jpg"
+   },
+   {
+      "categoryName": "Pizza",
+      "img": "pizza.jpg"
+   },
+   {
+      "categoryName": "Getränke",
+      "img": "drinks.jpg"
+   }
+];
