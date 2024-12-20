@@ -36,6 +36,7 @@ function getOrderlistToBasekt(index){
                   <p>+</p>
                </button>
             </div> 
+            <button class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
          </div>
 
          <div class="sum padding-top">
