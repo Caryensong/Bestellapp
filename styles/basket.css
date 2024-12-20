@@ -70,6 +70,7 @@ button:hover {
   justify-content: space-between;
   padding-bottom: 16px;
   align-items: center;
+  gap: 10px;
 }
 
 .bar_line{
