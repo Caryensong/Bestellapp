@@ -42,6 +42,8 @@ function findDishIndex(dishName) {
  
 function addDishesToBasket(index) {
   let basketRef = document.getElementById("fillOrderListBasket");
-  basketRef.innerHTML = " ";
+  if (basketRef.innerHTML !== ""){
+    basketRef.innerHTML = "";
+  }
   basketRef.innerHTML += getOrderlistToBasekt(index);
 }
