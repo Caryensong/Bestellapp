@@ -53,22 +53,31 @@ function getDishesValuefromContent(index) {
     startRef.innerHTML = "";
   }
 
-  getDishesToMyBasketArr(index);
-  basketRef.innerHTML += getOrderlistToBasektTemplate(index);
+ getDishesToMyBasketArr(index);
 
-  if (!isTotalAmountAdded) {
+ if (!isTotalAmountAdded) {
     addTotalAmount();
     isTotalAmountAdded = true;
   }
 }
 
 function getDishesToMyBasketArr(arr){
-let dish = myDishes[arr].name;
-  let dishInBasket = myDishes.indexOf(dish);
+  let basketRef = document.getElementById("fillOrderListBasket");
+  let dish = myDishes[arr].name;
+  let dishInBasket = myBasket.findIndex(item => item.name === dish);
+
   if(dishInBasket === -1){
     myBasket.push(myDishes[arr]);
+    let newArray=  dishInBasket + myBasket.length;
+    basketRef.innerHTML += getOrderlistToBasektTemplate(newArray);
   } else {
-    myDishes[arr].price ++
+
+    let singlePrice = myBasket[dishInBasket].price;
+    let startPrice = myDishes[arr].price
+    myBasket[dishInBasket].price = singlePrice + startPrice;
+    
+    let basketItems = basketRef.querySelectorAll("#dishBasketList");
+    basketItems[dishInBasket].innerHTML = getOrderlistToBasektTemplate(dishInBasket); 
   }
 }
 
