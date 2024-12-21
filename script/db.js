@@ -63,3 +63,5 @@ let myDishesHeadline =[
       "img": "drinks.jpg"
    }
 ];
+
+let myBasket =[];
