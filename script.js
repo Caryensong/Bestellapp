@@ -39,11 +39,26 @@ function findDishIndex(dishName) {
    }
  }
 
+ let isTotalAmountAdded = false; 
  
 function addDishesToBasket(index) {
   let basketRef = document.getElementById("fillOrderListBasket");
+  let startRef = document.getElementById("startBasketBeforAdd");
+
   if (basketRef.innerHTML !== ""){
-    basketRef.innerHTML = "";
+    startRef.innerHTML = "";
   }
-  basketRef.innerHTML += getOrderlistToBasekt(index);
+
+  basketRef.innerHTML += getOrderlistToBasektTemplate(index);
+
+  if (!isTotalAmountAdded) {
+    addTotalAmount();
+    isTotalAmountAdded = true;
+  }
+}
+
+function addTotalAmount(){
+  let basketRef = document.getElementById("fillOrderListBasket");
+  basketRef.innerHTML += getTotalAmountTemplate();
+
 }

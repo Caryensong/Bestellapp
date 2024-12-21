@@ -18,7 +18,7 @@ function getDishTemplate(dish, globalIndex) {
       </div>`;
 }
 
-function getOrderlistToBasekt(index){
+function getOrderlistToBasektTemplate(index){
    return `
          <div class="orderlist_bar">
               <span>${myDishes[index].name}</span>
@@ -38,25 +38,31 @@ function getOrderlistToBasekt(index){
             </div> 
             <button class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
          </div>
+   `
+}
 
-         <div class="sum padding-top">
-            <span>Zwischensumme</span>
-             <span>20 Euro</span>
-          </div>
-          <div class="sum">
-            <span>Lieferkosten</span>
-            <span>4,50 Euro</span>
-         </div>
-         <div class="bar_line"></div>
-         <div class="sum">
-            <span>Gesamt</span>
-            <span>20 Euro</span>
-         </div>
+function getTotalAmountTemplate(){
+   return `
+     <div class="">
+       <div class="sum padding-top">
+         <span>Zwischensumme</span>
+         <span>20 Euro</span>
+      </div>
+      <div class="sum">
+         <span>Lieferkosten</span>
+         <span>4,50 Euro</span>
+      </div>
+      <div class="bar_line"></div>
+      <div class="sum">
+         <span>Gesamt</span>
+         <span>20 Euro</span>
+      </div>
 
-          <div class="pay_buttombar">
-            <button class="pay_buttom">
-              <p>Bezahlen (29,80Euro)</p>
-            </button>
-          </div>
+      <div class="pay_buttombar">
+         <button class="pay_buttom">
+            <p>Bezahlen (29,80Euro)</p>
+         </button>
+      </div>
+    </div>
    `
 }
