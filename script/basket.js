@@ -1,6 +1,5 @@
 let isTotalAmountAdded = false;
 
-
 function addDishesToBasket(index) {
    getDishesValuefromContent(index);
  }
@@ -15,9 +14,9 @@ function addDishesToBasket(index) {
  
    getDishesToMyBasketArr(index);
  
-   if (!isTotalAmountAdded) {
-     addTotalAmount(index);
-     isTotalAmountAdded = true;
+   if(!isTotalAmountAdded) {
+      getTotalStart(index);
+      isTotalAmountAdded = true;
    } else{
      getTotalPrice();
    }
@@ -29,15 +28,12 @@ function addDishesToBasket(index) {
    let basketArr = myBasket.findIndex((item) => item.name === dish);
  
    if (basketArr === -1) {
-     let dishCopy = { ...myDishes[arr] }; // einen kopie - originalen nicht verändere
+     let dishCopy = { ...myDishes[arr] }; // einen kopie - original nicht verändert
      myBasket.push(dishCopy);
  
      let newArray = myBasket.length - 1;
      let addAmount = myBasket[newArray].amount;
-     basketOrderRef.innerHTML += getOrderlistToBasektTemplate(
-       newArray,
-       addAmount
-     );
+     basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray,addAmount);
    } else {
      let singlePrice = myBasket[basketArr].price;
      let startPrice = myDishes[arr].price;
@@ -50,12 +46,15 @@ function addDishesToBasket(index) {
    }
  }
  
- 
  function updateBasketItem(index, addAmount){
    let basketItems = document.getElementById(`dishBasketListItem${index}`);
-   if (basketItems) {
+   if (addAmount === 0) {
+    myBasket.splice(index, 1);
+    basketItems.innerHTML = "";
+    getTotalPrice();
+
+  }else{
    basketItems.innerHTML = getOrderlistToBasektTemplate(index ,addAmount);
- 
    getTotalPrice();
   }
  }
@@ -66,7 +65,7 @@ function addDishesToBasket(index) {
    totalRef.innerHTML = getTotalAmountTemplate(totalPrice);
  }
  
- function addTotalAmount(i) {
+ function getTotalStart(i) {
    let basketRef = document.getElementById("totalPayContent");
    if (basketRef.innerHTML === "") {
      let newPrice = myDishes[i].price;
@@ -84,10 +83,14 @@ function addDishesToBasket(index) {
  
  function minusAmount(basketArr) {
    updateBasketPriceMinus(basketArr);
- 
-   let addAmount = (myBasket[basketArr].amount -= 1);
- 
-   updateBasketItem(basketArr, addAmount);
+   
+   if (myBasket[basketArr].amount > 1) {
+      let addAmount = (myBasket[basketArr].amount -= 1);
+      updateBasketItem(basketArr, addAmount);
+   } else{
+      let deletAmount = 0;
+      updateBasketItem(basketArr, deletAmount);
+   }
  }
  
  function updateBasketPrice(basketArr) {
@@ -97,6 +100,7 @@ function addDishesToBasket(index) {
        let startPrice = myDishes[arr].price;
  
        myBasket[basketArr].price = singlePrice + startPrice;
+       break;
      }
    }
  }
@@ -108,6 +112,7 @@ function addDishesToBasket(index) {
        let startPrice = myDishes[arr].price;
  
        myBasket[basketArr].price = singlePrice - startPrice;
+       break;
      }
    }
  }
