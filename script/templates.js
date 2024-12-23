@@ -42,12 +42,12 @@ function getOrderlistToBasektTemplate(index, amount){
    `
 }
 
-function getTotalAmountTemplate(){
+function getTotalAmountTemplate(amount){
    return `
      <div class="">
        <div class="sum padding-top">
          <span>Zwischensumme</span>
-         <span>20 Euro</span>
+         <span>${amount.toFixed(2)} Euro</span>
       </div>
       <div class="sum">
          <span>Lieferkosten</span>
@@ -56,12 +56,12 @@ function getTotalAmountTemplate(){
       <div class="bar_line"></div>
       <div class="sum">
          <span>Gesamt</span>
-         <span>20 Euro</span>
+         <span>${(amount + 4.5).toFixed(2)} Euro</span>
       </div>
 
       <div class="pay_buttombar">
          <button class="pay_buttom">
-            <p>Bezahlen (29,80Euro)</p>
+            <p>Bezahlen (${(amount + 4.5).toFixed(2)} Euro)</p>
          </button>
       </div>
     </div>
