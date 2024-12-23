@@ -19,7 +19,7 @@ function getDishTemplate(dish, globalIndex) {
 }
 
 function getOrderlistToBasektTemplate(index){
-   return `<div id="dishBasketList">
+   return `<div id="dishBasketListItem${index}">
          <div class="orderlist_bar">
               <span>${myBasket[index].name}</span>
               <span>${myBasket[index].price.toFixed(2).replace(".",",")} Euro</span>
