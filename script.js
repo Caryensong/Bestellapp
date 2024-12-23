@@ -1,3 +1,5 @@
+let isTotalAmountAdded = false; 
+
 function init() {
   render();
 }
@@ -39,8 +41,6 @@ function findDishIndex(dishName) {
    }
  }
 
- let isTotalAmountAdded = false; 
-
 function addDishesToBasket(index){
   getDishesValuefromContent(index);
 }
@@ -69,19 +69,22 @@ function getDishesToMyBasketArr(arr){
   if(basketArr === -1){
     let dishCopy = { ...myDishes[arr] }; // einen kopie - originalen nicht verändere
     myBasket.push(dishCopy);
+   
 
-    let newArray=  myBasket.length - 1;
-    basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray);
+    let newArray=  myBasket.length - 1;    
+    let addAmount = myBasket[newArray].amount;
+    basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray, addAmount);
 
   } else {
     let singlePrice = myBasket[basketArr].price;
     let startPrice = myDishes[arr].price
     myBasket[basketArr].price = singlePrice + startPrice;
+    let addAmount = myBasket[basketArr].amount + 1;
 
  
    let basketItems = document.getElementById(`dishBasketListItem${basketArr}`);
    if(basketItems){
-   basketItems.innerHTML = getOrderlistToBasektTemplate(basketArr); 
+   basketItems.innerHTML = getOrderlistToBasektTemplate(basketArr, addAmount); 
   }
   }
 }
