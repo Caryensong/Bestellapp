@@ -28,15 +28,15 @@ function getOrderlistToBasektTemplate(index, amount){
          <div class="add_removebar">
             <span> Anmerkungen hinzufügen</span>
             <div class="order_basket">
-               <button id="minusAmount${index}" class="remove_btn">
+               <button onclick="minusAmount(${index})" id="minusAmount${index}" class="remove_btn">
                   <p>-</p>
                </button>
                <span id="amountDish"> ${amount} </span>
-               <button id="addAmount${index}" class="add_btn">
+               <button onclick="addAmount(${index})" id="addAmount${index}" class="add_btn">
                   <p>+</p>
                </button>
             </div> 
-            <button id="removeAllAmount${index}" class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
+            <button onclick="removeAllAmount(${index})" id="removeAllAmount${index}" class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
          </div>
          </div>
    `
