@@ -18,7 +18,7 @@ function getDishTemplate(dish, globalIndex) {
       </div>`;
 }
 
-function getOrderlistToBasektTemplate(index){
+function getOrderlistToBasektTemplate(index, amount){
    return `<div id="dishBasketListItem${index}">
          <div class="orderlist_bar">
               <span>${myBasket[index].name}</span>
@@ -28,15 +28,15 @@ function getOrderlistToBasektTemplate(index){
          <div class="add_removebar">
             <span> Anmerkungen hinzufügen</span>
             <div class="order_basket">
-               <button class="remove_btn">
+               <button id="minusAmount${index}" class="remove_btn">
                   <p>-</p>
                </button>
-               <span>2</span>
-               <button class="add_btn">
+               <span id="amountDish"> ${amount} </span>
+               <button id="addAmount${index}" class="add_btn">
                   <p>+</p>
                </button>
             </div> 
-            <button class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
+            <button id="removeAllAmount${index}" class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
          </div>
          </div>
    `
