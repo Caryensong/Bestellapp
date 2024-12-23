@@ -67,25 +67,20 @@ function getDishesToMyBasketArr(arr){
   let basketArr = myBasket.findIndex(item => item.name === dish);
 
   if(basketArr === -1){
-    let dishCopy = { ...myDishes[arr] }; // einen kopie - originalen nicht verändere
+    let dishCopy = {...myDishes[arr]}; // einen kopie - originalen nicht verändere
     myBasket.push(dishCopy);
-   
-
-    let newArray=  myBasket.length - 1;    
+  
+    let newArray = myBasket.length - 1;    
     let addAmount = myBasket[newArray].amount;
     basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray, addAmount);
 
-  } else {
+  } else {  
     let singlePrice = myBasket[basketArr].price;
-    let startPrice = myDishes[arr].price
-    myBasket[basketArr].price = singlePrice + startPrice;
-    let addAmount = myBasket[basketArr].amount + 1;
+    let startPrice = myDishes[arr].price;
 
- 
-   let basketItems = document.getElementById(`dishBasketListItem${basketArr}`);
-   if(basketItems){
-   basketItems.innerHTML = getOrderlistToBasektTemplate(basketArr, addAmount); 
-  }
+    myBasket[basketArr].price = singlePrice + startPrice;
+  
+    addAmount(basketArr);
   }
 }
 
@@ -94,4 +89,22 @@ function addTotalAmount(){
   if (basketRef.innerHTML === "") {
     basketRef.innerHTML = getTotalAmountTemplate();
   }
+}
+
+function addAmount(basketArr){
+  let addAmount = myBasket[basketArr].amount += 1;
+  
+
+  let basketItems = document.getElementById(`dishBasketListItem${basketArr}`);
+   if(basketItems){
+   basketItems.innerHTML = getOrderlistToBasektTemplate(basketArr, addAmount); 
+  }
+}
+
+function minusAmount(){
+
+}
+
+function removeAllAmount(){
+  
 }
