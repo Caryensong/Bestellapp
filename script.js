@@ -62,26 +62,33 @@ function getDishesValuefromContent(index) {
 }
 
 function getDishesToMyBasketArr(arr){
-  let basketRef = document.getElementById("fillOrderListBasket");
+  let basketOrderRef = document.getElementById("OrderListBasket");
   let dish = myDishes[arr].name;
-  let dishInBasket = myBasket.findIndex(item => item.name === dish);
+  let basketArr = myBasket.findIndex(item => item.name === dish);
 
-  if(dishInBasket === -1){
-    myBasket.push(myDishes[arr]);
-    let newArray=  dishInBasket + myBasket.length;
-    basketRef.innerHTML += getOrderlistToBasektTemplate(newArray);
+  if(basketArr === -1){
+    let dishCopy = { ...myDishes[arr] }; // einen kopie - originalen nicht verändere
+    myBasket.push(dishCopy);
+
+    let newArray=  myBasket.length - 1;
+    basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray);
+
   } else {
-
-    let singlePrice = myBasket[dishInBasket].price;
+    let singlePrice = myBasket[basketArr].price;
     let startPrice = myDishes[arr].price
-    myBasket[dishInBasket].price = singlePrice + startPrice;
-    
-    let basketItems = basketRef.querySelectorAll("#dishBasketList");
-    basketItems[dishInBasket].innerHTML = getOrderlistToBasektTemplate(dishInBasket); 
+    myBasket[basketArr].price = singlePrice + startPrice;
+
+ 
+   let basketItems = document.getElementById(`dishBasketListItem${basketArr}`);
+   if(basketItems){
+   basketItems.innerHTML = getOrderlistToBasektTemplate(basketArr); 
+  }
   }
 }
 
 function addTotalAmount(){
-  let basketRef = document.getElementById("fillOrderListBasket");
-  basketRef.innerHTML += getTotalAmountTemplate();
+  let basketRef = document.getElementById("totalPayContent");
+  if (basketRef.innerHTML === "") {
+    basketRef.innerHTML = getTotalAmountTemplate();
+  }
 }
