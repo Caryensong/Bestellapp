@@ -49,8 +49,8 @@ button:hover {
 
 #fillOrderListBasket{
   width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
+  /* display: flex;
+  flex-direction: column-reverse; */
 }
 
 .order_basket {

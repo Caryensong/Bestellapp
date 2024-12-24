@@ -11,11 +11,12 @@ function addDishesToBasket(index){
 
 function getUpdateBasketDisplay(index, amount){
   let basketRef = document.getElementById("fillOrderListBasket");
-   let startRef = document.getElementById("startBasketBeforAdd");
- 
-   if (basketRef.innerHTML !== "") {
+  let startRef = document.getElementById("startBasketBeforAdd");
+  if (basketRef.innerHTML !== "") {
      startRef.innerHTML = "";
-   }
+  }
+
+  getDishesToMyBasket(index, amount);
 
   if(!isTotalAmountAdded) {
     getTotalStart(index);
@@ -23,9 +24,6 @@ function getUpdateBasketDisplay(index, amount){
   } else{
     updateTotalPrice();
   }
-
-  basketRef.innerHTML += getOrderlistToBasektTemplate(index, amount);
-  // getDishesToMyBasket(index);
 }
 
 function getTotalStart(i) {
@@ -40,135 +38,61 @@ function updateTotalPrice(){
     let totalRef = document.getElementById("totalPayContent");
     let totalPrice = myDishes.reduce((sum, item) => sum + item.total, 0);
     totalRef.innerHTML = getTotalAmountTemplate(totalPrice);
-
 }
 
+function getDishesToMyBasket(index, amount){
+  let basketOrderRef = document.getElementById("OrderListBasket");
+  let basketItems = document.getElementById(`dishBasketListItem${index}`);
+  let selectedDish = myDishes[index];
 
-//  function getDishesToMyBasketArr(arr) {
-//    let basketOrderRef = document.getElementById("OrderListBasket");
-//    let dish = myDishes[arr].name;
-//    let basketArr = myBasket.findIndex((item) => item.name === dish);
- 
-//    if (basketArr === -1) {
-//      let dishCopy = { ...myDishes[arr] }; // einen kopie - original nicht verändert
-//      myBasket.push(dishCopy);
- 
-//      let newArray = myBasket.length - 1;
-//      let addAmount = myBasket[newArray].amount;
-//      basketOrderRef.innerHTML += getOrderlistToBasektTemplate(newArray, addAmount);
-//    } else {
-//      let singlePrice = myBasket[basketArr].price;
-//      let startPrice = myDishes[arr].price;
- 
-//      myBasket[basketArr].price = singlePrice + startPrice;
- 
-//      let addAmount = (myBasket[basketArr].amount += 1);
- 
-//      updateBasketItem(basketArr, addAmount);
-//    }
-//  }
- 
-//  function updateBasketItem(index, addAmount){
-//    let basketItems = document.getElementById(`dishBasketListItem${index}`);
-//    if (addAmount === 0) {
+  if(selectedDish.amount === 1 ){
+    basketOrderRef.innerHTML += getOrderlistToBasektTemplate(index, amount);
+  } 
+  else if(selectedDish.amount === 0){
+    if(basketItems) basketItems.remove();
+  }
+  else{
+    if (basketItems) {
+         basketItems.innerHTML = getOrderlistToBasektTemplate(index, amount);
+    }
+  }
+}
 
-//     myBasket.splice(index, 1);
-//     basketItems.innerHTML = "";
-//     getTotalPrice();
-//   } else{   
-//    basketItems.innerHTML = getOrderlistToBasektTemplate(index ,addAmount);
-//    getTotalPrice();
-//   }
-//  }
- 
+function addAmount(basketArr) {
+  addDishesToBasket(basketArr);
+ }
 
-//  function addAmount(basketArr) {
-//    updateBasketPrice(basketArr);
- 
-//    let addAmount = (myBasket[basketArr].amount += 1);
- 
-//    updateBasketItem(basketArr, addAmount);
-//  }
- 
-//  function minusAmount(basketArr) {
-//    updateBasketPriceMinus(basketArr);
-   
-//    if (myBasket[basketArr].amount > 1) {
-//       let addAmount = (myBasket[basketArr].amount -= 1);
-//       updateBasketItem(basketArr, addAmount);
-//    } else{
-//       let deletAmount = 0;
-//       updateBasketItem(basketArr, deletAmount);
-//    }
-//  }
- 
-//  function updateBasketPrice(basketArr) {
-//    for (let arr = 0; arr < myDishes.length; arr++) {
-//      if (myDishes[arr].name === myBasket[basketArr].name) {
-//        let singlePrice = myBasket[basketArr].price;
-//        let startPrice = myDishes[arr].price;
- 
-//        myBasket[basketArr].price = singlePrice + startPrice;
-//        break;
-//      }
-//    }
-//  }
- 
-//  function updateBasketPriceMinus(basketArr) {
-//    for (let arr = 0; arr < myDishes.length; arr++) {
-//      if (myDishes[arr].name === myBasket[basketArr].name) {
-//        let singlePrice = myBasket[basketArr].price;
-//        let startPrice = myDishes[arr].price;
- 
-//        myBasket[basketArr].price = singlePrice - startPrice;
-//        break;
-//      }
-//    }
-//  }
- 
-//  function totalUpdate(){
- 
-//  }
- 
-//  function removeAllAmount(index) {
-//  }
- 
+function minusAmount(basketArr) {
+  let selectetDish = myDishes[basketArr];
 
-// ______________________________________
+  if ( selectetDish.amount > 1 ) {
+     let newAmount = selectetDish.amount -= 1;
+     selectetDish.total = selectetDish.amount * selectetDish.price;
 
-// function addDishesToBasket(index) {
-//    getDishesValuefromContent(index);
-//  }
- 
-//  function getDishesValuefromContent(index) {
-//    let basketRef = document.getElementById("fillOrderListBasket");
-//    let startRef = document.getElementById("startBasketBeforAdd");
- 
-//    if (basketRef.innerHTML !== "") {
-//      startRef.innerHTML = "";
-//    }
- 
-//    getDishesToMyBasketArr(index);
- 
-//    if(!isTotalAmountAdded) {
-//       getTotalStart(index);
-//       isTotalAmountAdded = true;
-//    } else{
-//      getTotalPrice();
-//    }
-//  }
- 
-//  function getTotalStart(i) {
-//    let basketRef = document.getElementById("totalPayContent");
-//    if (basketRef.innerHTML === "") {
-//      let newPrice = myDishes[i].price;
-//      basketRef.innerHTML = getTotalAmountTemplate(newPrice);
-//    }
-//  }
+     UpdateMinusBasketDisplay(basketArr, newAmount);
+  } else{
+    let deletAmount =selectetDish.amount -= 1;
+    selectetDish.total = selectetDish.amount * selectetDish.price;
+    UpdateMinusBasketDisplay(basketArr, deletAmount);
+   }
+   updateTotalPrice();
+ }
 
-//  function getTotalPrice(){
-//    let totalRef = document.getElementById("totalPayContent");
-//    let totalPrice = myBasket.reduce((sum, item) => sum + item.price, 0);
-//    totalRef.innerHTML = getTotalAmountTemplate(totalPrice);
-//  }
- 
+function UpdateMinusBasketDisplay(index, amount){
+  let basketOrderRef = document.getElementById("OrderListBasket");
+  let basketItems = document.getElementById(`dishBasketListItem${index}`);
+  let selectedDish = myDishes[index];
+
+  if(selectedDish.amount >= 1 ){
+    basketItems.innerHTML = getOrderlistToBasektTemplate(index, amount);
+  } 
+  else if (selectedDish.amount === 0){
+    if(basketItems) basketItems.remove();
+  } else {
+console.log("err")
+  }
+}
+
+function removeAllAmount(){
+
+}
