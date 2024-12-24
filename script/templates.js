@@ -18,6 +18,19 @@ function getDishTemplate(dish, globalIndex) {
       </div>`;
 }
 
+function renderBasketTemplate(){
+return `
+   <div class="start_basket">
+      <img src="./assets/icon/basket_black.png" />
+               <h3>Fülle dein Warebkorb</h3>
+               <p>
+                 Füge einige leckere Gerichte aus der Speisekarte hinzu und
+                 bestelle dein Essen.
+               </p>
+             </div>
+             `;
+ }
+
 function getOrderlistToBasektTemplate(index, amount){
    return `<div id="dishBasketListItem${index}">
          <div class="orderlist_bar">
@@ -67,3 +80,4 @@ function getTotalAmountTemplate(amount){
     </div>
    `
 }
+

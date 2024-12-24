@@ -11,26 +11,10 @@ function addDishesToBasket(index){
 }
 
 function getUpdateBasketDisplay(){
-  let basketRef = document.getElementById("OrderListBasket");
   let startRef = document.getElementById("startBasketBeforAdd");
-  let endRef = document.getElementById("endBasketRemoveAll");
+  startRef.innerHTML= "";
+}
 
-  if (basketRef.innerHTML !== "") {
-    startRef.innerHTML = "";
-} else{
-  if (endRef) { 
-    endRef.innerHTML = `
-      <div class="start_basket">
-        <img src="./assets/icon/basket_black.png" alt="Warenkorb Symbol" />
-        <h3>Fülle deinen Warenkorb</h3>
-        <p>
-          Füge einige leckere Gerichte aus der Speisekarte hinzu und
-          bestelle dein Essen.
-        </p>
-      </div>`;
-  }
-}
-}
 
 function UpdateBasketDisplay(index, amount){
   getDishesToMyBasket(index, amount);
@@ -52,10 +36,12 @@ function getTotalStart(i) {
 }
 
 function updateTotalPrice(){
+    let startRef = document.getElementById("startBasketBeforAdd");
     let totalRef = document.getElementById("totalPayContent");
     let totalPrice = myDishes.reduce((sum, item) => sum + item.total, 0);
     if(totalPrice === 0){
       totalRef.innerHTML = "";
+      startRef.innerHTML += renderBasketTemplate();
     }else{
     totalRef.innerHTML = getTotalAmountTemplate(totalPrice);
   }
@@ -120,5 +106,4 @@ function removeAllAmount(index){
  basketItems.remove();
 
   updateTotalPrice();
-  getUpdateBasketDisplay();
 }
