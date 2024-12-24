@@ -31,14 +31,14 @@ let myDishes = [
       "name" : "Pizza Funghi",
       "price": 8.50,
       "description" : "mit Champignons",
-      "amount": 1,
+      "amount": 0,
       "total" :0
    },
    {
       "name" : "Pizza Spinaci",
       "price": 8.00,
       "description" : "mit Spinat und Knoblauch",
-      "amount": 1,
+      "amount": 0,
       "total" :0
    },
    {
@@ -52,7 +52,7 @@ let myDishes = [
       "name" : "Hausgemachte Limonade",
       "price": 4.50,
       "description" : "mit Zitrone und Minze",
-      "amount": 1,
+      "amount": 0,
       "total" :0,
    },{
       "name" : "Himbeer-Limonade",
