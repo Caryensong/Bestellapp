@@ -21,8 +21,8 @@ function getDishTemplate(dish, globalIndex) {
 function getOrderlistToBasektTemplate(index, amount){
    return `<div id="dishBasketListItem${index}">
          <div class="orderlist_bar">
-              <span>${myBasket[index].name}</span>
-              <span>${myBasket[index].price.toFixed(2).replace(".",",")} Euro</span>
+              <span>${myDishes[index].name}</span>
+              <span>${myDishes[index].total.toFixed(2).replace(".",",")} Euro</span>
          </div>
 
          <div class="add_removebar">
