@@ -4,6 +4,7 @@ function init() {
 
 function render() {
   let contentOrderRef = document.getElementById("OrderListContent");
+  let startRef = document.getElementById("startBasketBeforAdd");
   contentOrderRef.innerHTML = "";
 
   for (let i = 0; i < myDishesHeadline.length; i++) {
@@ -19,6 +20,7 @@ function render() {
       contentOrderRef.innerHTML += getDishTemplate(dish, globalIndex);
     }
   }
+   startRef.innerHTML += renderBasketTemplate();
 }
 
 function getDishesForCategory(category) {
