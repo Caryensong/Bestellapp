@@ -107,3 +107,17 @@ function removeAllAmount(index){
 
   updateTotalPrice();
 }
+
+function addPayButton(){
+  let dialogContent = document.getElementById("dialogAfterPayBtn");
+  let basketOrderRef = document.getElementById("OrderListBasket");
+  basketOrderRef.innerHTML ="";
+  
+  dialogContent.innerHTML =
+ `<dialog open>
+          <div class="time">35 min</div>
+          <h2 class="thx_text">Vielen Dank für Ihre Bestellung!</h2>  
+          <p>Ihre Bestellung beträgt <span class="pay_text"> 20 Euro</span>.</p>
+          Wir machen uns sofort an die Zubereitung!  
+        </dialog> `;
+}
