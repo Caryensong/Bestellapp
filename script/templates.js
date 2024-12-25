@@ -53,14 +53,14 @@ function getOrderlistToBasektTemplate(index, amount){
          </div>
          </div>
    `
-}
+}  
 
 function getTotalAmountTemplate(amount){
    return `
      <div class="">
        <div class="sum padding-top">
          <span>Zwischensumme</span>
-         <span>${amount.toFixed(2)} Euro</span>
+         <span>${amount.toFixed(2).replace(".",",")} Euro</span>
       </div>
       <div class="sum">
          <span>Lieferkosten</span>
@@ -69,15 +69,24 @@ function getTotalAmountTemplate(amount){
       <div class="bar_line"></div>
       <div class="sum">
          <span>Gesamt</span>
-         <span>${(amount + 4.5).toFixed(2)} Euro</span>
+         <span>${(amount + 4.5).toFixed(2).replace(".",",")} Euro</span>
       </div>
 
       <div onclick="addPayButton()"  class="pay_buttombar">
          <button class="pay_buttom">
-            <p>Bezahlen (${(amount + 4.5).toFixed(2)} Euro)</p>
+            <p>Bezahlen (${(amount + 4.5).toFixed(2).replace(".",",")} Euro)</p>
          </button>
       </div>
     </div>
    `
 }
 
+function getDialogTemplate(totalPrice, totalAmount){
+   return `<dialog open>
+          <div class="time">35 min</div>
+          <h2 class="thx_text">Vielen Dank für Ihre Bestellung!</h2>  
+          <p>Sie haben <span class="pay_text">${totalAmount} Bestellung</span>
+          , und der Gesamtbetrag beträgt <span class="pay_text">${(totalPrice + 4.5).toFixed(2).replace(".",",")} Euro</span>.</p>
+          Wir machen uns sofort an die Zubereitung!  
+        </dialog> `
+}

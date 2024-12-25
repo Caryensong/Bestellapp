@@ -32,6 +32,8 @@ function getTotalStart(i) {
      if (basketRef.innerHTML === "") {
        let newPrice = myDishes[i].total;
        basketRef.innerHTML = getTotalAmountTemplate(newPrice);
+     }else{
+      basketRef.innerHTML = "";
      }
 }
 
@@ -111,13 +113,22 @@ function removeAllAmount(index){
 function addPayButton(){
   let dialogContent = document.getElementById("dialogAfterPayBtn");
   let basketOrderRef = document.getElementById("OrderListBasket");
-  basketOrderRef.innerHTML ="";
+  let totalPrice = myDishes.reduce((sum, item) => sum + item.total, 0);
+  let totalAmount = myDishes.reduce((sum, item) => sum + item.amount, 0);
   
-  dialogContent.innerHTML =
- `<dialog open>
-          <div class="time">35 min</div>
-          <h2 class="thx_text">Vielen Dank für Ihre Bestellung!</h2>  
-          <p>Ihre Bestellung beträgt <span class="pay_text"> 20 Euro</span>.</p>
-          Wir machen uns sofort an die Zubereitung!  
-        </dialog> `;
+  dialogContent.innerHTML = getDialogTemplate(totalPrice, totalAmount);
+
+  myDishes.forEach(item => {
+    item.amount = 0;
+    item.total = 0;
+});
+
+  basketOrderRef.innerHTML ="";
+  getTotalStart();
+  updateTotalPrice();
+
+  setTimeout(() => {
+    dialogContent.innerHTML = "";
+}, 3000);
 }
+
