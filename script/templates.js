@@ -72,7 +72,7 @@ function getTotalAmountTemplate(amount){
          <span>${(amount + 4.5).toFixed(2)} Euro</span>
       </div>
 
-      <div class="pay_buttombar">
+      <div onclick="addPayButton()"  class="pay_buttombar">
          <button class="pay_buttom">
             <p>Bezahlen (${(amount + 4.5).toFixed(2)} Euro)</p>
          </button>

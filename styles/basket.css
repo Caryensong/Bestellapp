@@ -127,6 +127,7 @@ margin-bottom: 10px;
   color: #fff;
   border-radius: 40px;
   font-weight: bolder;
+  cursor: pointer;
 }
 .pay_buttom:hover{
   background-color:#e66f38;
