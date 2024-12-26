@@ -56,7 +56,7 @@
         </footer>
       </div>
 
-      <section class="basket_wrapper">
+      <section id="basketDisplay" class="basket_wrapper display_none">
         <div class="basket">
           <h3>Warenkorb</h3>
           <div class="basket_buttons">
@@ -78,11 +78,18 @@
             <div id="totalPayContent"></div>
           </section>
         </div>
+        <section onclick="backRespoBasket()" id="respoBasket" class="respo_basket_btn">
+          <button>
+            <img src="./assets/icon/add.png" alt="ADD">
+          </button>
+          </section>
     </section>  
     
     <!-- respo Warenkorb Button -->
-        <section id="respoBasket" class="respo_basket_btn">
-          <button><img src="./assets/icon/basket_black.png" alt="Warenkorb"></button>
+        <section onclick="showRespoBasket()" id="respoBasket" class="respo_basket_btn">
+          <button>
+            <img src="./assets/icon/basket_black.png" alt="Warenkorb">
+          </button>
           </section>
 
       <section id="dialogAfterPayBtn"></section>

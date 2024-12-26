@@ -35,3 +35,15 @@ function positionScreen() {
 }
 
 window.addEventListener('scroll', positionScreen);
+
+// Basket
+
+function showRespoBasket(){
+  const basketDisplayRef = document.getElementById('basketDisplay');
+  basketDisplayRef.classList.remove('display_none');
+}
+
+function backRespoBasket(){
+  const basketDisplayRef = document.getElementById('basketDisplay');
+  basketDisplayRef.classList.add('display_none');
+}
