@@ -92,7 +92,6 @@ h2{
    position: sticky;
    top: 0;
    background-color: #f86600;
-
 }
 
 a{
@@ -108,6 +107,11 @@ a{
 a:hover{
    color: #fff;
    background-color: #f86600;
+}
+/* Stil für den aktiven Link */
+.nav_a.active {
+   background-color: #f39c12;
+   color: white;
 }
 
 p{

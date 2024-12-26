@@ -1,8 +1,8 @@
 function getHeadlineTemplate(i) {
    return `
-    <div id="categoryList${i}">
+    <div id="categoryList${i}" >
          <img class="header_img" src="./assets/img/${myDishesHeadline[i].img}" />
-         <h3>${myDishesHeadline[i].categoryName}</h3>
+         <h3 class="category">${myDishesHeadline[i].categoryName}</h3>
       </div>`;
 }
 
