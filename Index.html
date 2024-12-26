@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./styles/basket.css" />
     <link rel="stylesheet" href="./styles/assets.css" /> 
-  
+ 
     <script src="./script/db.js"></script>
     <script src="./script.js"></script>
     <script src="./script/templates.js"></script>  
-    <script src="./script/basket.js"></script>
+    <script src="./script/basket.js"></script>  
+    <script src="./script/respo.js" defer></script>
+    
    
   </head>
   <body onload="init()">
@@ -40,9 +42,9 @@
         </section>
 
         <nav id="navbar" class="menu_nav">
-          <a href="#categoryList0">Nudelgerichte</a>
-          <a href="#categoryList1">Pizza</a>
-          <a href="#categoryList2">Getränke</a>
+          <a id="linkPasta" class="nav_a" href="#categoryList0">Nudelgerichte</a>
+          <a id="linkPizza" class="nav_a" href="#categoryList1">Pizza</a>
+          <a id="linkDrinks" class="nav_a" href="#categoryList2">Getränke</a>
         </nav>
 
         
@@ -81,6 +83,6 @@
       </section>
       <section id="dialogAfterPayBtn"></section>
     </div>
-    <script src="./script/respo.js"></script>
+   
   </body>
 </html>
