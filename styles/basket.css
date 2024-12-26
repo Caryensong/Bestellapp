@@ -178,11 +178,13 @@ width: 300px;
 #fillOrderListBasket {
   width: 80%;
 }
+.display_none{
+  display: none;
+}
 .respo_basket_btn{
   position: fixed;
   bottom: 20px;
   right: 20px;
   display:block;
-  z-index: 2000;
 }
 }
