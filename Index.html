@@ -11,16 +11,18 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./styles/basket.css" />
-    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/assets.css" /> 
+  
     <script src="./script/db.js"></script>
     <script src="./script.js"></script>
-    <script src="./script/templates.js"></script>
+    <script src="./script/templates.js"></script>  
     <script src="./script/basket.js"></script>
+   
   </head>
   <body onload="init()">
-    <nav>
+    <header>
       <img src="./assets/Logo/Logo.png" alt="Bestellapp" />
-    </nav>
+    </header>
 
     <div class="content_wrapper">
       <div class="content">
@@ -37,11 +39,11 @@
           </div>
         </section>
 
-        <section class="menu_nav">
+        <nav id="navbar" class="menu_nav">
           <a href="#categoryList0">Nudelgerichte</a>
           <a href="#categoryList1">Pizza</a>
           <a href="#categoryList2">Getränke</a>
-        </section>
+        </nav>
 
         
 
@@ -79,5 +81,6 @@
       </section>
       <section id="dialogAfterPayBtn"></section>
     </div>
+    <script src="./script/respo.js"></script>
   </body>
 </html>
