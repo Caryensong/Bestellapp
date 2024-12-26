@@ -10,7 +10,7 @@
   width: 100%;
   height: auto;
   position: sticky;
-  top: 10px;
+  top: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -131,4 +131,58 @@ margin-bottom: 10px;
 }
 .pay_buttom:hover{
   background-color:#e66f38;
+}
+
+/* Warenkorb buttom*/
+.respo_basket_btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display:none;
+}
+.respo_basket_btn button{
+ width: 100%;
+ border: none;
+ cursor: pointer;
+ padding: 10px 40px 10px 40px;
+ border-radius: 30px;
+}
+
+.respo_basket_btn button:hover{
+  background-color: #f86600;
+}
+
+/* respo */
+@media(max-width:730px){
+  .content {
+    width:100% ;
+}
+.content_wrapper {
+  display: flex
+;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.basket_wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+.basket_buttons {
+width: 300px;
+}
+#fillOrderListBasket {
+  width: 80%;
+}
+.respo_basket_btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display:block;
+  z-index: 2000;
+}
 }
