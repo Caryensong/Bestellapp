@@ -9,7 +9,7 @@ body {
   box-sizing: border-box;
 }
 
-nav {
+header {
   height: 55px;
   width: 100%;
   background-color: #f86600;
@@ -20,7 +20,7 @@ nav {
   z-index: 1000;
 }
 
-nav img{
+header img{
    width: 110px;
    object-fit: cover;
 }
@@ -84,6 +84,15 @@ h2{
    align-items: center;
    gap: 16px;
    padding-left: 16px;
+   position: relative;
+   z-index: 1000;
+}
+
+.menu_nav.sticky {
+   position: sticky;
+   top: 0;
+   background-color: #f86600;
+
 }
 
 a{
