@@ -17,7 +17,6 @@ function render() {
       let dish = dishesForCategory[j];
 
       let globalIndex = findDishIndex(dish.name);
-
       contentOrderRef.innerHTML += getDishTemplate(dish, globalIndex);
     }
   }
