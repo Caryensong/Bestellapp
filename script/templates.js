@@ -3,7 +3,7 @@ function getHeadlineTemplate(i) {
     <div id="categoryList${i}" >
          <img class="header_img" src="./assets/img/${myDishesHeadline[i].img}" />
          <h3 class="category">${myDishesHeadline[i].categoryName}</h3>
-      </div>`;
+   </div>`;
 }
 
 function getDishTemplate(dish, globalIndex) {
@@ -27,12 +27,13 @@ return `
                  Füge einige leckere Gerichte aus der Speisekarte hinzu und
                  bestelle dein Essen.
                </p>
-             </div>
+   </div>
              `;
  }
 
 function getOrderlistToBasektTemplate(index, amount){
-   return `<div id="dishBasketListItem${index}">
+   return `
+      <div id="dishBasketListItem${index}">
          <div class="orderlist_bar">
               <span>${myDishes[index].name}</span>
               <span>${myDishes[index].total.toFixed(2).replace(".",",")} Euro</span>
@@ -51,7 +52,7 @@ function getOrderlistToBasektTemplate(index, amount){
             </div> 
             <button onclick="removeAllAmount(${index})" id="removeAllAmount${index}" class="add_btn"><img src="./assets/icon/trash.png" alt="trash"> </button>
          </div>
-         </div>
+      </div>
    `
 }  
 
