@@ -47,3 +47,17 @@ function backRespoBasket(){
   const basketDisplayRef = document.getElementById('basketDisplay');
   basketDisplayRef.classList.add('display_none');
 }
+
+function showDishesAmountInBasket(){
+  const basketDisplayRef = document.getElementById('respoBtn');
+  let totalAmount = myDishes.reduce((sum, item) => sum + item.amount, 
+  0);
+  basketDisplayRef.innerHTML = `
+  <section onclick="showRespoBasket()" id="respoBasket" class="respo_basket_btn">
+  <button>
+      <img src="./assets/icon/basket_black.png" alt="Warenkorb">
+      ${totalAmount}
+  </button> 
+  </section>
+`;
+}
