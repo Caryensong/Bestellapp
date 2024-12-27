@@ -1,5 +1,6 @@
 function init() {
   render();
+  showDishesAmountInBasket();
 }
 
 function render() {

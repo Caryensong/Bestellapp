@@ -8,6 +8,7 @@ function addDishesToBasket(index){
   
   getUpdateBasketDisplay();
   UpdateBasketDisplay(index, newAmount);
+  showDishesAmountInBasket();
 }
 
 function getUpdateBasketDisplay(){
@@ -126,6 +127,7 @@ function addPayButton(){
   basketOrderRef.innerHTML ="";
   getTotalStart();
   updateTotalPrice();
+  showDishesAmountInBasket();
 
   setTimeout(() => {
     dialogContent.innerHTML = "";
