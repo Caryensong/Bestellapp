@@ -1,5 +1,6 @@
 .headline_orderlist{
-   padding: 16px;
+   padding: 16px 0 16px 16px;
+   margin-right: 16px;
 }
 
 h3{

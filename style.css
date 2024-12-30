@@ -1,5 +1,6 @@
 html {
    scroll-behavior: smooth;
+   overflow-x: hidden;
  }
  
 body {
@@ -11,17 +12,16 @@ body {
 
 header {
   height: 55px;
-  width: 100%;
   background-color: #f86600;
   display:flex;
   align-items: center;
-  padding-left: 15px;
   box-shadow: 0px 3px 20px -2px #8080805d;
 
 }
 
 header img{
    width: 110px;
+   padding-left: 15px;
    object-fit: cover;
 }
 
@@ -80,6 +80,7 @@ h2{
 .menu_nav{
    background-color: rgba(85, 40, 3, 0.089);
    height: 40px;
+   width: 100 auto;
    display: flex;
    align-items: center;
    gap: 16px;
